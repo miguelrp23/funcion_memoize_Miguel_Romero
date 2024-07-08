@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie de Fibonacci con Memoización en TypeScript</title>
+</head>
+<body>
+    <h1>Serie de Fibonacci con Memoización en TypeScript</h1>
+
+    <label for="numberInput">Ingrese el número de elementos:</label>
+    <input type="number" id="numberInput" min="1" >
+    <button id="generateButton">Generar Serie</button>
+
+    <p id="result"></p>
+
+    <script src="index.js"></script>
+    <script>
+        // Gestión de la interfaz de usuario y la lógica de la aplicación
+        const { fibonacci } = require('./memoize');
+
+        const generateButton = document.getElementById('generateButton');
+        const numberInput = document.getElementById('numberInput');
+        const resultElement = document.getElementById('result');
+
+        generateButton.addEventListener('click', () => {
+            const n = parseInt(numberInput.value, 10);
+            try {
+                const fibSeries = Array.from({ length: n }, (_, index) => fibonacci(index + 1));
+                resultElement.textContent = `Los primeros ${n} números de la serie de Fibonacci son: ${fibSeries.join(', ')}`;
+            } catch (error) {
+                resultElement.textContent = error.message;
+            }
+        });
+    </script>
+</body>
+</html>
