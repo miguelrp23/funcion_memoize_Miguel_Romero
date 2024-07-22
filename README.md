@@ -22,6 +22,6 @@ bash git clone https://github.com/tu-usuario/tu-repositorio.git
    
 4. se recomienda en el visual code tener la extencion "live server", para ver el html correctamente
    y que vea el resultado de el codigo, recuerde que tiene que estar en el html y darle click
-   en la parte inferior derecha dond edice "go live"
+   en la parte inferior derecha donde dice "go live"
 
 si sigue los pasos se tendria que reproducir todo correctamente
