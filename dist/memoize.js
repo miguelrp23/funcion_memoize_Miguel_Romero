@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.memoize = exports.fibonacci = void 0;
-// Función de memoización
 const memoize = (fn) => {
     const cache = {};
     return (...args) => {
@@ -15,7 +14,6 @@ const memoize = (fn) => {
     };
 };
 exports.memoize = memoize;
-// Función recursiva de Fibonacci con memoización
 const fibonacci = memoize((n) => {
     if (n <= 0) {
         throw new Error('El número debe ser mayor que cero');

@@ -1,4 +1,4 @@
-// Función de memoización
+
 const memoize = (fn: Function): Function => {
     const cache: Record<string, any> = {};
     return (...args: any[]): any => {
@@ -12,7 +12,7 @@ const memoize = (fn: Function): Function => {
     };
 };
 
-// Función recursiva de Fibonacci con memoización
+
 const fibonacci = memoize((n: number): number => {
     if (n <= 0) {
         throw new Error('El número debe ser mayor que cero');
