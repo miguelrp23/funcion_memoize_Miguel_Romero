@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.memoize = exports.fibonacci = void 0;
 const memoize = (fn) => {
     const cache = {};
-    return (...args) => {
+    const memoizedFn = (...args) => {
         const key = args.join('-');
         if (key in cache) {
             return cache[key];
@@ -12,6 +12,8 @@ const memoize = (fn) => {
         cache[key] = result;
         return result;
     };
+    memoizedFn.cache = cache; // Exponer el caché para pruebas
+    return memoizedFn;
 };
 exports.memoize = memoize;
 const fibonacci = memoize((n) => {

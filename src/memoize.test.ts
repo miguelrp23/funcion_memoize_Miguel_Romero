@@ -27,4 +27,16 @@ describe('function fibonacci', () => {
     })
 });
 
+describe('cache memoize', () => {
 
+    test('cache test', () => {
+        const add = memoize((a: number, b: number): number => a + b);
+        
+        expect(add(1, 2)).toBe(3); 
+        expect(add(1, 2)).toBe(3); 
+
+        
+        expect(add.cache).toEqual({ '1-2': 3 }); 
+    });
+
+});

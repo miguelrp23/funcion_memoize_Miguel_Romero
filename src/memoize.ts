@@ -1,7 +1,7 @@
 
-const memoize = (fn: Function): Function => {
+const memoize = (fn: Function): Function & { cache: Record<string, any> } => {
     const cache: Record<string, any> = {};
-    return (...args: any[]): any => {
+    const memoizedFn = (...args: any[]): any => {
         const key = args.join('-');
         if (key in cache) {
             return cache[key];
@@ -10,8 +10,9 @@ const memoize = (fn: Function): Function => {
         cache[key] = result;
         return result;
     };
+    memoizedFn.cache = cache; // Exponer el caché para pruebas
+    return memoizedFn;
 };
-
 
 const fibonacci = memoize((n: number): number => {
     if (n <= 0) {
@@ -24,4 +25,7 @@ const fibonacci = memoize((n: number): number => {
 });
 
 export { fibonacci, memoize };
+
+
+
 

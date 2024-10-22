@@ -20,4 +20,13 @@ describe('function fibonacci', () => {
         expect(result2).toBe(1);
     });
 });
+describe('Funciones memoize y fibonacci', () => {
+    test('memoize guarda en el caché', () => {
+        const add = (0, memoize_1.memoize)((a, b) => a + b);
+        expect(add(1, 2)).toBe(3); // Primera llamada, se ejecuta la función
+        expect(add(1, 2)).toBe(3); // Segunda llamada, debe usar el caché
+        // Asegurarse de que la función solo se haya ejecutado una vez
+        expect(add.cache).toEqual({ '1-2': 3 }); // Verificamos el caché
+    });
+});
 //# sourceMappingURL=memoize.test.js.map
