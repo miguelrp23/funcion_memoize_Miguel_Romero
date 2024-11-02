@@ -10,7 +10,7 @@ const memoize = (fn: Function): Function & { cache: Record<string, any> } => {
         cache[key] = result;
         return result;
     };
-    memoizedFn.cache = cache; // Exponer el caché para pruebas
+    memoizedFn.cache = cache; 
     return memoizedFn;
 };
 

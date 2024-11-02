@@ -14,7 +14,7 @@ Clona este repositorio o descarga los archivos.
 
 bash git clone https://github.com/tu-usuario/tu-repositorio.git
 
-2. instalacion del jest con el comando "npm install --save-dev jest"
+2. para la instalacion de todos las dependencias que necesitas utiliza el comando "npm install". 
 
 3. con el comando "npm test" ejecutas los test que tiene el codigo,
    se ejecutaran correctamente si tienes el jest instalado
